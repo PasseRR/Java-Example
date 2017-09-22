@@ -1,0 +1,73 @@
+{
+  "title": "设计模式",
+  "description": "设计模式示例",
+  "author": "passerr",
+  "generator": "site",
+  "language": "zh-hans",
+  "styles": {
+    "website": "css/website.css"
+  },
+  "plugins": [
+    "theme-comscore",
+    "-search",
+    "-lunr",
+    "search-plus",
+    "back-to-top-button",
+    "collapsible-chapters",
+    "sharing",
+    "github"
+  ],
+  "pluginsConfig": {
+    "search-pro": {
+      "cutWordLib": "nodejieba",
+      "defineWord": [
+        "gitbook-use"
+      ]
+    },
+    "sharing": {
+      "weibo": true,
+      "facebook": false,
+      "twitter": false,
+      "google": false,
+      "instapaper": false,
+      "vk": false,
+      "all": [
+        "facebook",
+        "google",
+        "twitter",
+        "weibo",
+        "instapaper"
+      ]
+    },
+    "collapsible-chapters":{},
+    "github": {
+      "url": "https://github.com/PasseRR"
+    }
+  },
+  "pdf": {
+    "fontSize": 12,
+    "footerTemplate": null,
+    "headerTemplate": null,
+    "margin": {
+      "bottom": 36,
+      "left": 62,
+      "right": 62,
+      "top": 36
+    },
+    "pageNumbers": false,
+    "paperSize": "a4"
+  },
+  "mobi": {
+    "fontSize": 12,
+    "footerTemplate": null,
+    "headerTemplate": null,
+    "margin": {
+      "bottom": 36,
+      "left": 62,
+      "right": 62,
+      "top": 36
+    },
+    "pageNumbers": false,
+    "paperSize": "a4"
+  }
+}
