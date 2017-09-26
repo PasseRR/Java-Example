@@ -1,0 +1,23 @@
+group 'github.com.passerr'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+allprojects {
+    // java编译的时候缺省状态下会因为中文字符而失败
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+    // JVM 版本要求
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        maven { url 'http://repo1g.maven.org/maven2' }
+        maven { url 'http://10.128.11.68:8081/nexus/content/groups/public' }
+        mavenCentral()
+        jcenter()
+    }
+}
+
+//dependencies {
+//    testCompile "org.spockframework:spock-core:1.1-groovy-2.4-rc-4"
+//}
