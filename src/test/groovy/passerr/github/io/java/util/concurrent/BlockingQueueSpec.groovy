@@ -1,4 +1,9 @@
 package passerr.github.io.java.util.concurrent
+
+import spock.lang.Specification
+
+import java.util.concurrent.ArrayBlockingQueue
+
 /**
  * <p>
  * 阻塞队列有四种行为:
@@ -22,8 +27,49 @@ package passerr.github.io.java.util.concurrent
  * @see java.util.Queue
  * @see java.util.concurrent.BlockingQueue
  * @see java.util.concurrent.BlockingDeque
+ * @see java.util.concurrent.TransferQueue
  * @author xiehai1
  * @date 2017/09/20 10:07
  * @Copyright ( c ) gome inc Gome Co.,LTD
  */
+class BlockingQueueSpec extends Specification {
+    def "throw exception when add element"() {
+        given:
+        def queue = new ArrayBlockingQueue(1)
 
+        expect:
+        queue.add(1)
+
+        when:
+        queue.add(2)
+        then:
+        thrown(IllegalStateException.class)
+    }
+
+    def "throw exception when remove element"() {
+        given:
+        def queue = new ArrayBlockingQueue(1)
+
+        when:
+        queue.remove()
+        then:
+        thrown(NoSuchElementException.class)
+    }
+
+    def "return value when offer element"() {
+        given:
+        def queue = new ArrayBlockingQueue(1)
+
+        expect:
+        queue.offer(1)
+        !queue.offer(2)
+    }
+
+    def "return value when poll element"() {
+        given:
+        def queue = new ArrayBlockingQueue(1)
+
+        expect:
+        queue.poll() == null
+    }
+}
