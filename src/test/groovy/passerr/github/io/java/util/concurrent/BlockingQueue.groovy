@@ -1,8 +1,4 @@
 package passerr.github.io.java.util.concurrent
-
-import spock.lang.Specification
-
-
 /**
  * <p>
  * 阻塞队列有四种行为:
@@ -20,15 +16,14 @@ import spock.lang.Specification
  * ----------------------------------------------------------------------------------------
  * ｜ 入队 ｜  add(o)   ｜      offer(o)       　｜ put(o)  ｜ offer(o, timeout, timeunit)  ｜
  * ----------------------------------------------------------------------------------------
- * ｜ 出队 ｜ remove(o) ｜      poll(o)        　｜ take(o) ｜ poll(timeout, timeunit)      ｜
+ * ｜ 出队 ｜ remove()  ｜       poll()        　｜ take()  ｜ poll(timeout, timeunit)      ｜
  * ----------------------------------------------------------------------------------------
  * </pre>
  * @see java.util.Queue
  * @see java.util.concurrent.BlockingQueue
+ * @see java.util.concurrent.BlockingDeque
  * @author xiehai1
  * @date 2017/09/20 10:07
  * @Copyright ( c ) gome inc Gome Co.,LTD
  */
-class BlockingQueueSpec extends Specification {
 
-}
