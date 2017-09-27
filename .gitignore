@@ -1,4 +1,2 @@
-.idea
-*.iml
-.gradle
-build
+src/node_modules
+gitbook/gitbook/gitbook-plugin-livereload/

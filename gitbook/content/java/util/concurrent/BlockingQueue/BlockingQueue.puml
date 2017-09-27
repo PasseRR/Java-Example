@@ -1,0 +1,86 @@
+@startuml
+interface Queue{
+  +boolean add(E e)
+  +boolean offer(E e)
+  +E remove()
+  +E poll()
+  +E element()
+  +E peek()
+}
+abstract AbstractQueue
+
+interface Deque {
+  +void addFirst(E e)
+  +void addLast(E e)
+  +boolean offerFirst(E e)
+  +boolean offerLast(E e)
+  +E removeFirst()
+  +E removeLast()
+  +E pollFirst()
+  +E pollLast()
+  +E getFirst()
+  +E getLast()
+  +E peekFirst()
+  +E peekLast()
+  +boolean removeFirstOccurrence(Object o)
+  +boolean removeLastOccurrence(Object o)
+}
+interface BlockingQueue{
+  +void put(E e)
+  +E take()
+  +boolean offer(E e, long timeout, TimeUnit unit)
+  +E poll(long timeout, TimeUnit unit)
+  +int drainTo(Collection<? super E> c)
+  +int drainTo(Collection<? super E> c, int maxElements)
+}
+class ArrayBlockingQueue
+class DelayQueue
+class LinkedBlockingQueue
+class PriorityBlockingQueue
+class SynchronousQueue
+
+interface TransferQueue{
+  +boolean tryTransfer(E e)
+  +void transfer(E e)
+  +boolean tryTransfer(E e, long timeout, TimeUnit unit)
+  +boolean hasWaitingConsumer()
+  +int getWaitingConsumerCount()
+}
+class LinkedTransferQueue
+
+interface BlockingDeque{
+  +void putFirst(E e)
+  +void putLast(E e)
+  +boolean offerFirst(E e, long timeout, TimeUnit unit)
+  +boolean offerLast(E e, long timeout, TimeUnit unit)
+  +E takeFirst()
+  +E takeLast()
+  +E pollFirst(long timeout, TimeUnit unit)
+  +E pollLast(long timeout, TimeUnit unit)
+}
+class LinkedBlockingDeque
+
+Queue <|.. AbstractQueue
+Queue <|-- Deque
+Queue <|-- BlockingQueue
+Queue <|-- TransferQueue
+Deque <|-- BlockingDeque
+BlockingQueue <|-- BlockingDeque
+
+AbstractQueue <|-- LinkedBlockingDeque
+BlockingDeque <|.. LinkedBlockingDeque
+
+AbstractQueue <|-- ArrayBlockingQueue
+BlockingQueue <|.. ArrayBlockingQueue
+AbstractQueue <|-- DelayQueue
+BlockingQueue <|.. DelayQueue
+AbstractQueue <|-- LinkedBlockingQueue
+BlockingQueue <|.. LinkedBlockingQueue
+AbstractQueue <|-- PriorityBlockingQueue
+BlockingQueue <|.. PriorityBlockingQueue
+AbstractQueue <|-- SynchronousQueue
+BlockingQueue <|.. SynchronousQueue
+
+AbstractQueue <|-- LinkedTransferQueue
+TransferQueue <|.. LinkedTransferQueue
+@enduml
