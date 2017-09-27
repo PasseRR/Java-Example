@@ -3,6 +3,7 @@ package passerr.github.io.java.util.concurrent
 import spock.lang.Specification
 
 import java.util.concurrent.ArrayBlockingQueue
+import java.util.concurrent.TimeUnit
 
 /**
  * <p>
@@ -71,5 +72,50 @@ class BlockingQueueSpec extends Specification {
 
         expect:
         queue.poll() == null
+    }
+
+    def "put and take"(){
+        given:
+        def queue = new ArrayBlockingQueue(1)
+
+        when:
+        // producer
+        new Thread({
+            TimeUnit.SECONDS.sleep(2)
+            def food = "race"
+            queue.put(food)
+            println "${Thread.currentThread().getName()} producer ${food}"
+        }).start()
+        // consumer
+        new Thread({
+            def food = queue.take()
+            println "${Thread.currentThread().getName()} consumer ${food}"
+        }).start()
+
+        TimeUnit.SECONDS.sleep(3)
+
+        then:
+        true
+    }
+
+    def "offer timeout"(){
+        given:
+        def queue = new ArrayBlockingQueue(1)
+
+        expect:
+        // offer success
+        queue.offer(1, 2, TimeUnit.SECONDS)
+        // offer fail
+        !queue.offer(2, 2, TimeUnit.SECONDS)
+    }
+
+    def "poll timeout"(){
+        given:
+        def queue = new ArrayBlockingQueue(1)
+        queue.put(1)
+
+        expect:
+        queue.poll(2, TimeUnit.SECONDS)
+        !queue.poll(2, TimeUnit.SECONDS)
     }
 }
