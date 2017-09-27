@@ -77,8 +77,6 @@ class BlockingQueueSpec extends Specification {
     def "put and take"(){
         given:
         def queue = new ArrayBlockingQueue(1)
-
-        when:
         // producer
         new Thread({
             TimeUnit.SECONDS.sleep(2)
@@ -92,9 +90,10 @@ class BlockingQueueSpec extends Specification {
             println "${Thread.currentThread().getName()} consumer ${food}"
         }).start()
 
+        // main thread wait consumer
         TimeUnit.SECONDS.sleep(3)
 
-        then:
+        expect:
         true
     }
 
