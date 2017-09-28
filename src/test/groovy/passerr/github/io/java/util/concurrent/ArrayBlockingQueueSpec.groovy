@@ -2,7 +2,7 @@ package passerr.github.io.java.util.concurrent
 
 import spock.lang.Specification
 
-
+import java.util.concurrent.ArrayBlockingQueue
 /**
  * <p>
  * ArrayBlockingQueue是一个有界的阻塞队列，其内部实现是将对象放到一个数组里。
@@ -16,5 +16,52 @@ import spock.lang.Specification
  * @Copyright ( c ) gome inc Gome Co.,LTD
  */
 class ArrayBlockingQueueSpec extends Specification {
+    def test() {
+        given:
+        def queue = new ArrayBlockingQueue(2)
+        queue.offer(1)
+        queue.offer(2)
 
+        expect:
+        true
+    }
+}
+
+class Queue<T>{
+    Node<T> head = null;
+    Node<T> last = null;
+    Queue(){
+        head = last = new Node<>(null)
+    }
+
+    def enqueue(Node<T> node){
+        last = last.next = node
+    }
+
+    static main(agrs) {
+        Queue<String> queue = new Queue<>()
+        println queue.head
+        queue.enqueue(new Node<String>("Hello"))
+        println queue.head
+        queue.enqueue(new Node<String>("World"))
+        println queue.head
+    }
+}
+
+class Node<T> {
+    Node<T> next;
+    T item;
+
+    Node(T item) {
+        this.item = item;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Node{" +
+            "next=" + next +
+            ", item=" + item +
+            '}';
+    }
 }
