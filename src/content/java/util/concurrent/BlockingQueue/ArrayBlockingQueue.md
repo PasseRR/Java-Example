@@ -111,7 +111,7 @@ public void put(E e) throws InterruptedException {
     }
 }
 ```
-#### 删除元素  
+#### 移除元素  
 * E poll()  
 ```java
 public E poll() {
@@ -262,3 +262,4 @@ public E take() throws InterruptedException {
 ```
 ## 总结
 ArrayBlockingQueue底层是一个循环的数组，使用一个重入锁和这个锁生成的两个条件对象进行并发控制。
+其他方法都会加锁比如contains、toArray、drainTo、clear、toString。
