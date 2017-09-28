@@ -1,0 +1,311 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000000703738b0, pid=9476, tid=8720
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_91-b14) (build 1.8.0_91-b14)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.91-b14 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x2738b0]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002419000):  JavaThread "main" [_thread_in_vm, id=8720, stack(0x00000000027c0000,0x00000000028c0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000074
+
+Registers:
+RAX=0x000000000000007c, RBX=0x0000000002419000, RCX=0x0000000000000078, RDX=0x0000000000000074
+RSP=0x00000000028bcd20, RBP=0x0000000000000000, RSI=0x0000000000000060, RDI=0x0000000000000000
+R8 =0x0000000000000018, R9 =0x000000000000001c, R10=0x00000000028d7f08, R11=0x0000000070329d90
+R12=0x0000000000000018, R13=0x00000000568ae1d0, R14=0x00000000028bce98, R15=0x0000000002419000
+RIP=0x00000000703738b0, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x00000000028bcd20)
+0x00000000028bcd20:   00000000000003d8 00000000024194c0
+0x00000000028bcd30:   0000000000000000 00000000701e579f
+0x00000000028bcd40:   00000000568ae1d0 00000000702e2577
+0x00000000028bcd50:   00000000ffffffff 00000000028d7dc6
+0x00000000028bcd60:   00000000568ae1d0 0000000002419000
+0x00000000028bcd70:   00000000568ae1d0 0000000002419000
+0x00000000028bcd80:   0000000000000000 00000000028d7f34
+0x00000000028bcd90:   00000000ffffffff 00000000568ae1d0
+0x00000000028bcda0:   00000000028bce38 0000000002419000
+0x00000000028bcdb0:   0000000000000000 000000000000001c
+0x00000000028bcdc0:   0000000000000060 00000000028d7cab
+0x00000000028bcdd0:   0000000002419000 00000000568ae1d0
+0x00000000028bcde0:   0000000002419000 0000000002419000
+0x00000000028bcdf0:   00000000028d7c62 00000000028bcdf8
+0x00000000028bce00:   00000000568ae1d0 00000000028bce98
+0x00000000028bce10:   00000000568daf98 0000000000000000 
+
+Instructions: (pc=0x00000000703738b0)
+0x0000000070373890:   ef 48 83 c4 28 c3 4a 8d 54 81 fc 4b 8d 4c 81 fc
+0x00000000703738a0:   4d 85 c0 74 3e 66 66 66 0f 1f 84 00 00 00 00 00
+0x00000000703738b0:   8b 02 48 83 e9 04 48 83 ea 04 49 ff c8 89 41 04
+0x00000000703738c0:   75 ee 48 83 c4 28 c3 a8 01 75 0c 49 d1 e8 48 83 
+
+
+Register to memory mapping:
+
+RAX=0x000000000000007c is an unknown value
+RBX=0x0000000002419000 is a thread
+RCX=0x0000000000000078 is an unknown value
+RDX=0x0000000000000074 is an unknown value
+RSP=0x00000000028bcd20 is pointing into the stack for thread: 0x0000000002419000
+RBP=0x0000000000000000 is an unknown value
+RSI=0x0000000000000060 is an unknown value
+RDI=0x0000000000000000 is an unknown value
+R8 =0x0000000000000018 is an unknown value
+R9 =0x000000000000001c is an unknown value
+R10=0x00000000028d7f08 is at code_begin+840 in an Interpreter codelet
+method entry point (kind = native)  [0x00000000028d7bc0, 0x00000000028d8520]  2400 bytes
+R11=0x0000000070329d90 is an unknown value
+R12=0x0000000000000018 is an unknown value
+R13={method} {0x00000000568ae1d8} 'copyMemory' '(Ljava/lang/Object;JLjava/lang/Object;JJ)V' in 'sun/misc/Unsafe'
+R14=0x00000000028bce98 is pointing into the stack for thread: 0x0000000002419000
+R15=0x0000000002419000 is a thread
+
+
+Stack: [0x00000000027c0000,0x00000000028c0000],  sp=0x00000000028bcd20,  free space=1011k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.misc.Unsafe.copyMemory(Ljava/lang/Object;JLjava/lang/Object;JJ)V+0
+j  sun.misc.Unsafe.copyMemory(JJJ)V+7
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+15
+j  org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(Lorg/codehaus/groovy/runtime/callsite/CallSite;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+8
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+42
+j  passerr.github.io.java.util.atomic.UnsafeSpec.$spock_feature_0_9()V+557
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.spockframework.util.ReflectionUtil.invokeMethod(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+8
+j  org.spockframework.runtime.model.MethodInfo.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+9
+j  org.spockframework.runtime.BaseSpecRunner.invokeRaw(Ljava/lang/Object;Lorg/spockframework/runtime/model/MethodInfo;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.spockframework.runtime.BaseSpecRunner.invoke(Ljava/lang/Object;Lorg/spockframework/runtime/model/MethodInfo;[Ljava/lang/Object;)V+28
+j  org.spockframework.runtime.BaseSpecRunner.runFeatureMethod()V+27
+j  org.spockframework.runtime.BaseSpecRunner.doRunIteration()V+5
+j  org.spockframework.runtime.BaseSpecRunner$6.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+4
+j  org.spockframework.runtime.BaseSpecRunner.invokeRaw(Ljava/lang/Object;Lorg/spockframework/runtime/model/MethodInfo;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.spockframework.runtime.BaseSpecRunner.invoke(Ljava/lang/Object;Lorg/spockframework/runtime/model/MethodInfo;[Ljava/lang/Object;)V+28
+j  org.spockframework.runtime.BaseSpecRunner.runIteration([Ljava/lang/Object;I)V+52
+j  org.spockframework.runtime.BaseSpecRunner.initializeAndRunIteration([Ljava/lang/Object;I)V+20
+j  org.spockframework.runtime.BaseSpecRunner.runSimpleFeature()V+13
+j  org.spockframework.runtime.BaseSpecRunner.doRunFeature()V+39
+j  org.spockframework.runtime.BaseSpecRunner$5.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+4
+j  org.spockframework.runtime.BaseSpecRunner.invokeRaw(Ljava/lang/Object;Lorg/spockframework/runtime/model/MethodInfo;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.spockframework.runtime.BaseSpecRunner.invoke(Ljava/lang/Object;Lorg/spockframework/runtime/model/MethodInfo;[Ljava/lang/Object;)V+28
+j  org.spockframework.runtime.BaseSpecRunner.runFeature()V+66
+j  org.spockframework.runtime.BaseSpecRunner.runFeatures()V+48
+j  org.spockframework.runtime.BaseSpecRunner.doRunSpec()V+5
+j  org.spockframework.runtime.BaseSpecRunner$1.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+4
+j  org.spockframework.runtime.BaseSpecRunner.invokeRaw(Ljava/lang/Object;Lorg/spockframework/runtime/model/MethodInfo;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.spockframework.runtime.BaseSpecRunner.invoke(Ljava/lang/Object;Lorg/spockframework/runtime/model/MethodInfo;[Ljava/lang/Object;)V+28
+j  org.spockframework.runtime.BaseSpecRunner.runSpec()V+31
+j  org.spockframework.runtime.BaseSpecRunner.run()I+45
+j  org.spockframework.runtime.Sputnik.run(Lorg/junit/runner/notification/RunNotifier;)V+19
+j  org.junit.runner.JUnitCore.run(Lorg/junit/runner/Runner;)Lorg/junit/runner/Result;+37
+j  com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs([Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;Z)Lorg/junit/runner/Result;+158
+j  com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs([Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;IZ)I+12
+j  com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart([Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;)I+288
+j  com.intellij.rt.execution.junit.JUnitStarter.main([Ljava/lang/String;)V+106
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  com.intellij.rt.execution.application.AppMain.main([Ljava/lang/String;)V+170
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000588cc800 JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=12060, stack(0x00000000596f0000,0x00000000597f0000)]
+  0x000000005889a000 JavaThread "Service Thread" daemon [_thread_blocked, id=8132, stack(0x0000000059360000,0x0000000059460000)]
+  0x0000000058827000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=12004, stack(0x00000000591f0000,0x00000000592f0000)]
+  0x0000000058820800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=12168, stack(0x00000000590d0000,0x00000000591d0000)]
+  0x000000005722f000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=10640, stack(0x0000000058e40000,0x0000000058f40000)]
+  0x000000005722d800 JavaThread "Attach Listener" daemon [_thread_blocked, id=11068, stack(0x0000000058c70000,0x0000000058d70000)]
+  0x000000005721f000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=10472, stack(0x0000000058290000,0x0000000058390000)]
+  0x000000005720a800 JavaThread "Finalizer" daemon [_thread_blocked, id=8016, stack(0x0000000058700000,0x0000000058800000)]
+  0x00000000571c3000 JavaThread "Reference Handler" daemon [_thread_blocked, id=11996, stack(0x0000000058570000,0x0000000058670000)]
+=>0x0000000002419000 JavaThread "main" [_thread_in_vm, id=8720, stack(0x00000000027c0000,0x00000000028c0000)]
+
+Other Threads:
+  0x00000000571bb800 VMThread [stack: 0x0000000058390000,0x0000000058490000] [id=4604]
+  0x0000000058853800 WatcherThread [stack: 0x00000000594e0000,0x00000000595e0000] [id=11012]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 36864K, used 9135K [0x00000000d6e00000, 0x00000000d9700000, 0x0000000100000000)
+  eden space 31744K, 12% used [0x00000000d6e00000,0x00000000d71f00d8,0x00000000d8d00000)
+  from space 5120K, 99% used [0x00000000d8d00000,0x00000000d91fbe08,0x00000000d9200000)
+  to   space 5120K, 0% used [0x00000000d9200000,0x00000000d9200000,0x00000000d9700000)
+ ParOldGen       total 84992K, used 624K [0x0000000084a00000, 0x0000000089d00000, 0x00000000d6e00000)
+  object space 84992K, 0% used [0x0000000084a00000,0x0000000084a9c288,0x0000000089d00000)
+ Metaspace       used 10899K, capacity 11104K, committed 11264K, reserved 1058816K
+  class space    used 1210K, capacity 1250K, committed 1280K, reserved 1048576K
+
+Card table byte_map: [0x0000000011c80000,0x0000000012060000] byte_map_base: 0x000000001185b000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000070912f70
+ Begin Bits: [0x00000000126a0000, 0x0000000014578000)
+ End Bits:   [0x0000000014578000, 0x0000000016450000)
+
+Polling page: 0x0000000001b60000
+
+CodeCache: size=245760Kb used=4159Kb max_used=4171Kb free=241600Kb
+ bounds [0x00000000028c0000, 0x0000000002ce0000, 0x00000000118c0000]
+ total_blobs=1338 nmethods=809 adapters=442
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 1.764 Thread 0x0000000058827000 nmethod 804 0x0000000002cd0690 code [0x0000000002cd0800, 0x0000000002cd0a48]
+Event: 1.764 Thread 0x0000000058827000  805       3       groovyjarjarasm.asm.ByteVector::putByte (39 bytes)
+Event: 1.764 Thread 0x0000000058827000 nmethod 805 0x0000000002cd0bd0 code [0x0000000002cd0d40, 0x0000000002cd0f68]
+Event: 1.764 Thread 0x0000000058827000  807       3       groovyjarjarasm.asm.ByteVector::b (64 bytes)
+Event: 1.764 Thread 0x0000000058827000 nmethod 807 0x0000000002cd1090 code [0x0000000002cd1200, 0x0000000002cd1488]
+Event: 1.764 Thread 0x0000000058827000  808       1       java.lang.reflect.Constructor::getDeclaringClass (5 bytes)
+Event: 1.765 Thread 0x0000000058827000 nmethod 808 0x0000000002cd1610 code [0x0000000002cd1760, 0x0000000002cd1870]
+Event: 1.765 Thread 0x0000000058827000  809       3       java.lang.Byte::<init> (10 bytes)
+Event: 1.765 Thread 0x0000000058827000 nmethod 809 0x0000000002cd18d0 code [0x0000000002cd1a40, 0x0000000002cd1c50]
+Event: 1.765 Thread 0x000000005722f000 nmethod 806 0x0000000002cd4a10 code [0x0000000002cd4b60, 0x0000000002cd4c78]
+
+GC Heap History (2 events):
+Event: 1.716 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 36864K, used 31744K [0x00000000d6e00000, 0x00000000d9700000, 0x0000000100000000)
+  eden space 31744K, 100% used [0x00000000d6e00000,0x00000000d8d00000,0x00000000d8d00000)
+  from space 5120K, 0% used [0x00000000d9200000,0x00000000d9200000,0x00000000d9700000)
+  to   space 5120K, 0% used [0x00000000d8d00000,0x00000000d8d00000,0x00000000d9200000)
+ ParOldGen       total 84992K, used 0K [0x0000000084a00000, 0x0000000089d00000, 0x00000000d6e00000)
+  object space 84992K, 0% used [0x0000000084a00000,0x0000000084a00000,0x0000000089d00000)
+ Metaspace       used 10654K, capacity 10854K, committed 11008K, reserved 1058816K
+  class space    used 1177K, capacity 1208K, committed 1280K, reserved 1048576K
+Event: 1.722 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 36864K, used 5103K [0x00000000d6e00000, 0x00000000d9700000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000d6e00000,0x00000000d6e00000,0x00000000d8d00000)
+  from space 5120K, 99% used [0x00000000d8d00000,0x00000000d91fbe08,0x00000000d9200000)
+  to   space 5120K, 0% used [0x00000000d9200000,0x00000000d9200000,0x00000000d9700000)
+ ParOldGen       total 84992K, used 624K [0x0000000084a00000, 0x0000000089d00000, 0x00000000d6e00000)
+  object space 84992K, 0% used [0x0000000084a00000,0x0000000084a9c288,0x0000000089d00000)
+ Metaspace       used 10654K, capacity 10854K, committed 11008K, reserved 1058816K
+  class space    used 1177K, capacity 1208K, committed 1280K, reserved 1048576K
+}
+
+Deoptimization events (4 events):
+Event: 1.028 Thread 0x0000000002419000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002a346e0 method=java.lang.String.indexOf([CII[CIII)I @ 3
+Event: 1.665 Thread 0x0000000002419000 Uncommon trap: reason=range_check action=make_not_entrant pc=0x0000000002a865d0 method=sun.reflect.generics.parser.SignatureParser.current()C @ 34
+Event: 1.724 Thread 0x0000000002419000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002c7c508 method=java.lang.ref.SoftReference.get()Ljava/lang/Object; @ 17
+Event: 1.755 Thread 0x0000000002419000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002c40918 method=java.io.File.exists()Z @ 34
+
+Internal exceptions (10 events):
+Event: 1.751 Thread 0x0000000002419000 Exception <a 'java/lang/ClassNotFoundException': org/spockframework/runtime/ErrorCollectorBeanInfo> (0x00000000d7073938) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 1.751 Thread 0x0000000002419000 Exception <a 'java/lang/ClassNotFoundException': org/spockframework/runtime/ErrorCollectorCustomizer> (0x00000000d707dd68) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]Na®ƒðü?
+Event: 1.754 Thread 0x0000000002419000 Exception <a 'java/lang/ClassNotFoundException': org/spockframework/runtime/ValueRecorderBeanInfo> (0x00000000d70b6e18) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 1.754 Thread 0x0000000002419000 Exception <a 'java/lang/ClassNotFoundException': org/spockframework/runtime/ValueRecorderCustomizer> (0x00000000d70c0e38) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 1.756 Thread 0x0000000002419000 Exception <a 'java/lang/ClassNotFoundException': passerr/github/io/java/util/atomic/StudentBeanInfo> (0x00000000d70e6948) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 1.756 Thread 0x0000000002419000 Exception <a 'java/lang/ClassNotFoundException': passerr/github/io/java/util/atomic/StudentCustomizer> (0x00000000d70f0db0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210Å4µP-ü?
+Event: 1.761 Thread 0x0000000002419000 Exception <a 'java/lang/ClassNotFoundException': org/codehaus/groovy/runtime/NullObjectBeanInfo> (0x00000000d7173e90) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 1.761 Thread 0x0000000002419000 Exception <a 'java/lang/ClassNotFoundException': groovy/lang/GroovyObjectSupportBeanInfo> (0x00000000d717d768) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 1.761 Thread 0x0000000002419000 Exception <a 'java/lang/ClassNotFoundException': groovy/lang/GroovyObjectSupportCustomizer> (0x00000000d7187418) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 1.762 Thread 0x0000000002419000 Exception <a 'java/lang/ClassNotFoundException': org/codehaus/groovy/runtime/NullObjectCustomizer> (0x00000000d7196848) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+
+Events (10 events):
+Event: 1.763 loading class groovy/lang/GroovyRuntimeException
+Event: 1.763 loading class groovy/lang/GroovyRuntimeException done
+Event: 1.764 loading class org/codehaus/groovy/runtime/typehandling/DefaultTypeTransformation
+Event: 1.764 loading class org/codehaus/groovy/runtime/typehandling/DefaultTypeTransformation done
+Event: 1.764 loading class java/lang/Byte$ByteCache
+Event: 1.764 loading class java/lang/Byte$ByteCache done
+Event: 1.765 loading class org/codehaus/groovy/runtime/callsite/PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap
+Event: 1.765 loading class org/codehaus/groovy/runtime/callsite/PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap done
+Event: 1.765 loading class org/codehaus/groovy/runtime/callsite/PojoMetaMethodSite$PojoCachedMethodSite
+Event: 1.765 loading class org/codehaus/groovy/runtime/callsite/PojoMetaMethodSite$PojoCachedMethodSite done
+
+
+Dynamic libraries:
+0x000000013fff0000 - 0x0000000140027000 	C:\Program Files\Java\jdk1.8.0_91\bin\java.exe
+0x0000000077900000 - 0x0000000077aaa000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00000000777e0000 - 0x00000000778ff000 	C:\Windows\system32\kernel32.dll
+0x000007fefdb40000 - 0x000007fefdbaa000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefe220000 - 0x000007fefe2fb000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefdc20000 - 0x000007fefdcbf000 	C:\Windows\system32\msvcrt.dll
+0x000007feff740000 - 0x000007feff75f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefe300000 - 0x000007fefe42d000 	C:\Windows\system32\RPCRT4.dll
+0x00000000776e0000 - 0x00000000777da000 	C:\Windows\system32\USER32.dll
+0x000007feff6d0000 - 0x000007feff737000 	C:\Windows\system32\GDI32.dll
+0x000007fefe750000 - 0x000007fefe75e000 	C:\Windows\system32\LPK.dll
+0x000007fefe430000 - 0x000007fefe4fa000 	C:\Windows\system32\USP10.dll
+0x000007fefc270000 - 0x000007fefc464000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_fa3b1e3d17594757\COMCTL32.dll
+0x000007feff760000 - 0x000007feff7d1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefdd70000 - 0x000007fefdd9e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefe5c0000 - 0x000007fefe6c9000 	C:\Windows\system32\MSCTF.dll
+0x0000000061e60000 - 0x0000000061f32000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\msvcr100.dll
+0x0000000070100000 - 0x0000000070993000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\server\jvm.dll
+0x000007fef8140000 - 0x000007fef8149000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefdd20000 - 0x000007fefdd6d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefdc10000 - 0x000007fefdc18000 	C:\Windows\system32\NSI.dll
+0x000007fefb760000 - 0x000007fefb79b000 	C:\Windows\system32\WINMM.dll
+0x000007fefcd10000 - 0x000007fefcd1c000 	C:\Windows\system32\VERSION.dll
+0x0000000077ad0000 - 0x0000000077ad7000 	C:\Windows\system32\PSAPI.DLL
+0x0000000072730000 - 0x000000007273f000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\verify.dll
+0x000000006fff0000 - 0x0000000070019000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\java.dll
+0x00000000726f0000 - 0x0000000072706000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\zip.dll
+0x000007fefe940000 - 0x000007feff6c9000 	C:\Windows\system32\SHELL32.dll
+0x000007fefdda0000 - 0x000007fefdfa3000 	C:\Windows\system32\ole32.dll
+0x000007fefd800000 - 0x000007fefd80f000 	C:\Windows\system32\profapi.dll
+0x000007fefaee0000 - 0x000007fefaef0000 	C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.2.2\bin\breakgen64.dll
+0x000000006ffd0000 - 0x000000006ffea000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\net.dll
+0x000007fefd000000 - 0x000007fefd055000 	C:\Windows\system32\mswsock.dll
+0x000007fefd0a0000 - 0x000007fefd0a7000 	C:\Windows\System32\wship6.dll
+0x000007fef5950000 - 0x000007fef5a75000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -ea -Didea.launcher.port=7538 -Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.2.2\bin -Didea.junit.sm_runner -Dfile.encoding=UTF-8 
+java_command: com.intellij.rt.execution.application.AppMain com.intellij.rt.execution.junit.JUnitStarter -ideVersion5 passerr.github.io.java.util.atomic.UnsafeSpec,copyMemory
+java_class_path (initial): C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.2.2\lib\idea_rt.jar;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.2.2\plugins\junit\lib\junit-rt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\rt.jar;D:\gome\GitWorkspace\Java-Example\Java-Example\build\classes\test;D:\gome\GitWorkspace\Java-Example\Java-Example\build\resources\test;D:\gome\GitWorkspace\Java-Example\Java-Example\build\classes\main;C:\Users\xiehai1.GOME\.gradle\caches\modules-2\files-2.1\org.spockframework\spock-core\1.1-groovy-2.4-rc-4\a09cb39238857ff34b79078b58b73abdef87a6ed\spock-core-1.1-groovy-2.4-rc-4.jar;C:\Users\xiehai1.GOME\.gradle\caches\modules-2\files-2.1\org.codehaus.groovy\groovy-all\2.4.9\3334e99a8baae12d6e014d444149e337ceb9
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_91
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\tools\groovy-2.4.6\bin;C:\Program Files\Git\bin;C:\tools\apache-maven-3.3.9\bin;C:\Users\xiehai1\node_modules\.bin;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\TortoiseSVN\bin;C:\Go\bin;C:\Program Files\nodejs\;C:\Users\xiehai1.GOME\node_modules\.bin;C:\Program Files\Java\jdk1.8.0_91/bin;C:\tools\gradle-2.13/bin;C:\Program Files\Docker Toolbox;C:\Program Files\PostgreSQL\9.6\bin;C:\Users\xiehai1.GOME\AppData\Roaming\npm;C:\tools\curl
+USERNAME=xiehai1
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 78 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.23677)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 78 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8082916k(347400k free), swap 16163972k(3964620k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.91-b14) for windows-amd64 JRE (1.8.0_91-b14), built on Apr  1 2016 00:58:32 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Sep 28 20:19:26 2017
+elapsed time: 1 seconds (0d 0h 0m 1s)
+
