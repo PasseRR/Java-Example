@@ -219,3 +219,26 @@ Tries to lock the object. Returns true or false to indicate whether the lock suc
 Sets all bytes in a given block of memory to a fixed value (usually zero)
 #### void setMemory(Object o, long offset, long bytes, byte value)
 Sets all bytes in a given block of memory to a fixed value (usually zero)
+
+### Memory Barrier/Memory Fence
+内存屏障（Memory Barrier，或有时叫做内存栅栏，Memory Fence）是一种CPU指令，
+用于控制特定条件下的重排序和内存可见性问题。Java编译器也会根据内存屏障的规则禁止重排序。
+有的处理器的重排序规则较严，无需内存屏障也能很好的工作，Java编译器会在这种情况下不放置内存屏障。  
+- **LoadLoad屏障**：对于这样的语句Load1; LoadLoad; Load2，在Load2及后续读取操作要读取的数据被访问前，
+保证Load1要读取的数据被读取完毕。  
+- **StoreStore屏障**：对于这样的语句Store1; StoreStore; Store2，在Store2及后续写入操作执行前，
+保证Store1的写入操作对其它处理器可见。  
+- **LoadStore屏障**：对于这样的语句Load1; LoadStore; Store2，在Store2及后续写入操作被刷出前，
+保证Load1要读取的数据被读取完毕。  
+- **StoreLoad屏障**：对于这样的语句Store1; StoreLoad; Load2，在Load2及后续所有读取操作执行前，
+保证Store1的写入对所有处理器可见。它的开销是四种屏障中最大的。在大多数处理器的实现中，这个屏障是个万能屏障，
+兼具其它三种内存屏障的功能。  
+
+![fences-table](fences-table.png)
+
+#### void loadFence()
+LoadLoad屏障
+#### void storeFence()
+StoreStore屏障
+#### void fullFence()
+StoreLoad屏障
