@@ -22,18 +22,19 @@ class AtomicBooleanSpec extends Specification {
 
         when:
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())
+        // 设置收银台服务中
+        flag.set(true)
         // 10个人排队买东西
         10.times { it ->
             def id = it
             executorService.submit({
-                while(flag.get()){
+                while(!flag.compareAndSet(true, false)){
                     TimeUnit.SECONDS.sleep(1)
                 }
-                // 当开始结账时
-                flag.set(true)
+                // 开始结账
                 TimeUnit.SECONDS.sleep(1)
                 // 结账完成
-                flag.set(false)
+                flag.set(true)
                 println "customer-${id}结账完成"
             })
         }
