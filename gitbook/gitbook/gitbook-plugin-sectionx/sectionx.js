@@ -44,6 +44,6 @@ require(["gitbook", "jquery"], function (gitbook, $) {
                     ('<b>' + $(this).attr('show') + '</b><span class="fa fa-angle-down pull-left"/>') :
                     '<span class="fa fa-angle-down"/>');
             }
-        });
+    });
     });
 });

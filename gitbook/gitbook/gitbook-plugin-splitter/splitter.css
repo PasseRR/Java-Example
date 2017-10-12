@@ -12,7 +12,6 @@
     -o-transition: color 350ms ease;
     transition: color 350ms ease
 }
-
 .divider-content-summary:hover {
     color: #444;
 }

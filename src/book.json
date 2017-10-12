@@ -5,12 +5,13 @@
   "generator": "site",
   "language": "zh-hans",
   "styles": {
-    "website": "css/website.css"
+    "website": "assets/css/website.css"
   },
   "plugins": [
-    "theme-comscore",
     "-search",
     "-lunr",
+    "-highlight",
+    "theme-comscore",
     "search-plus",
     "back-to-top-button",
     "collapsible-chapters",
@@ -19,8 +20,7 @@
     "uml",
     "prism",
     "splitter",
-    "sectionx",
-    "-highlight"
+    "sectionx"
   ],
   "pluginsConfig": {
     "search-pro": {
@@ -56,10 +56,8 @@
         "flow": "typescript"
       }
     },
-    "pluginsConfig": {
-      "sectionx": {
-        "tag": "h2"
-      }
+    "sectionx": {
+      "tag": "h2"
     }
   },
   "pdf": {
