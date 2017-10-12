@@ -30,10 +30,18 @@
             
                 
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+
+
+        <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+        <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+
+
+        <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
                 
@@ -780,15 +788,18 @@
                     "dir": "ltr"
                 },
                 "config": {
-                    "plugins": ["theme-comscore", "-search", "-lunr", "search-plus", "back-to-top-button", "collapsible-chapters", "sharing", "github", "uml", "prism", "-highlight", "livereload"],
+                    "plugins": ["theme-comscore", "-search", "-lunr", "search-plus", "back-to-top-button", "collapsible-chapters", "sharing", "github", "uml", "prism", "splitter", "sectionx", "-highlight", "livereload"],
                     "styles": {"website": "css/website.css"},
                     "pluginsConfig": {
                         "prism": {"css": ["prismjs/themes/prism.css"], "lang": {"flow": "typescript"}},
+                        "pluginsConfig": {"sectionx": {"tag": "h2"}},
                         "github": {"url": "https://github.com/PasseRR"},
                         "livereload": {},
+                        "splitter": {},
                         "search-pro": {"cutWordLib": "nodejieba", "defineWord": ["gitbook-use"]},
                         "collapsible-chapters": {},
                         "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "sectionx": {},
                         "uml": {"format": "png"},
                         "theme-comscore": {},
                         "back-to-top-button": {},
@@ -851,7 +862,7 @@
                     "mtime": "2017-10-12T10:19:17.266Z",
                     "type": "markdown"
                 },
-                "gitbook": {"version": "3.2.2", "time": "2017-10-12T10:19:53.541Z"},
+                "gitbook": {"version": "3.2.2", "time": "2017-10-12T10:36:17.573Z"},
                 "basePath": "../../..",
                 "book": {"language": ""}
             });
@@ -885,6 +896,15 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+
+
+<script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
         
     
         

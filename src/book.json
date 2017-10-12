@@ -18,6 +18,8 @@
     "github",
     "uml",
     "prism",
+    "splitter",
+    "sectionx",
     "-highlight"
   ],
   "pluginsConfig": {
@@ -52,6 +54,11 @@
       ],
       "lang": {
         "flow": "typescript"
+      }
+    },
+    "pluginsConfig": {
+      "sectionx": {
+        "tag": "h2"
       }
     }
   },
