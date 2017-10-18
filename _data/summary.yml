@@ -3,8 +3,14 @@
   nodes:
     - text: lang
       href: java.lang.html
+      nodes:
+        - text: Thread
+          href: java.lang.Thread.html
     - text: util
       href: java.util.html
+      nodes:
+        - text: concurrent
+          href: java.util.concurrent.html
 
 - text: javax
   href: javax.html
