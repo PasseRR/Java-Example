@@ -29,8 +29,6 @@
                   href: java.util.concurrent.atomic.AtomicStampedReference.html
             - text: BlockingQueue
               href: java.util.concurrent.BlockingQueue.html
-              nodes:
-
 
 - text: javax
   href: javax.html
