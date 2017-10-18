@@ -52,3 +52,7 @@ th {
     background-color: #666666;
     color: white;
 }
+
+.ui.left.sidebar, .ui.right.sidebar{
+    width: 400px;
+}
