@@ -23,33 +23,4 @@
     <!--<script src="http://cdn.bootcss.com/semantic-ui/0.16.1/javascript/semantic.js"></script>-->
     <script src="{{ site.url }}/asserts/js/semantic.min.js"></script>
     <script src="{{ site.url }}/asserts/js/bootstrap-treeview.min.js"></script>
-    <script>
-        var summary = [];
-        {% for item in site.data.summary %}
-            summary.push({{ item | replace: "=>", ":" }});
-        {% endfor %}
-
-        // 菜单
-        $('#summary').treeview({
-            color: "#428bca",
-            enableLinks: true,
-            showBorder: false,
-            data: summary
-        });
-
-        // 边栏
-        $('.vertical.sidebar').sidebar('setting', {dimPage: false})
-                .sidebar('show');
-
-        // 目录搜索
-        $('.ui.search').search({
-            source: $("#summary").treeview('getEnabled'),
-            minCharacters: 2, // 最小搜索字符
-            fields: {
-                title: 'text', // 结果标题
-                url: 'href' // 跳转url
-            },
-            searchFields: ['text']
-        });
-    </script>
 </head>
