@@ -27,8 +27,11 @@
     }).treeview('expandAll');
 
     // 边栏
-    $('.vertical.sidebar').sidebar('setting', {dimPage: false})
-            .sidebar('show');
+    $('.vertical.sidebar').sidebar('setting', {
+        dimPage: false,
+        closable: false,
+        returnScroll: true
+    }).sidebar('show');
 
     // 目录搜索
     $('.ui.search').search({
