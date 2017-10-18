@@ -1,0 +1,33 @@
+/*Gitbook Table样式*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    page-break-inside: avoid;
+    margin-top: 0;
+    margin-bottom: .85em;
+    display: table;
+    width: 100%;
+    overflow: auto
+}
+
+table th {
+    font-weight: 700;
+    padding: 6px 13px;
+    background-color: darkgray;
+    border: 1px solid #ddd;
+}
+
+table tr {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    page-break-inside: avoid;
+}
+
+table tr:nth-child(2n) {
+    background-color: #f8f8f8
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #ddd
+}

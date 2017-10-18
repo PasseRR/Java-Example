@@ -1,2 +1,10 @@
-src/node_modules
-gitbook/gitbook/gitbook-plugin-livereload/
+.DS_Store
+_book
+ebooks
+epub_tmp
+_site/
+Gemfile.lock
+script/publish
+sitemap.xml
+version.html
+.idea
