@@ -24,12 +24,17 @@
         enableLinks: true,
         showBorder: false,
         data: summary
-    }).treeview('expandAll');
-
+    });
+    // 目录按钮
+    $(".ui.animated.button").click(function () {
+        $('.vertical.sidebar').sidebar('toggle');
+    });
     // 边栏
     $('.vertical.sidebar').sidebar('setting', {
-        dimPage: false
-    }).sidebar('toggle');
+        dimPage: false,
+        transition: 'overlay',
+        mobileTransition: 'uncover'
+    });
 
     // 目录搜索
     $('.ui.search').search({

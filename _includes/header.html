@@ -1,11 +1,13 @@
 <header class="site-header">
     <nav class="site-nav">
-        <div class="trigger">
-            <a class="page-link"
-               onclick="javascript:$('.vertical.sidebar').sidebar('toggle');" href="#"
-               target=""><i class="list icon"></i></a>
+        <div class="ui animated vertical button">
+            <div class="visible content s-1">
+                <i class="list icon"></i>
+            </div>
+            <div class="hidden content">目录</div>
         </div>
     </nav>
+
     <div class="wrap">
         <div class="site-title">
             <a href="{{ site.url }}/">{{ site.title }}</a>
