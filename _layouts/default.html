@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html>
-{% include head.html %}
-<body>
-<div class="pusher">
-    {% include header.html %}
-    <div class="page-content">
-        <div class="wrap">
-            {{ content }}
+    {% include head.html %}
+    <body>
+        <div class="pusher">
+            {% include header.html %}
+            <div class="page-content">
+                <div class="wrap">
+                    {{ content }}
+                </div>
+            </div>
+            {% include footer.html %}
         </div>
-    </div>
-    {% include footer.html %}
-</div>
-</body>
+    </body>
 <script>
     var summary = [];
-    {%
-        for item in site.data.summary %}
-    summary.push({
-    {
-        item | replace
-    :
-        "=>", ":"
-    }
-    })
-    ;
-    {%
-        endfor %
-    }
+    {% for item in site.data.summary %}
+        summary.push({{ item | replace: "=>", ":" }});
+    {% endfor %}
     console.info(summary);
     // 菜单
     $('#summary').treeview({
