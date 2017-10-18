@@ -17,7 +17,7 @@
     {% for item in site.data.summary %}
         summary.push({{ item | replace: "=>", ":" }});
     {% endfor %}
-    console.info(summary);
+
     // 菜单
     $('#summary').treeview({
         color: "#428bca",
@@ -36,7 +36,6 @@
         minCharacters: 2, // 最小搜索字符
         fields: {
             title: 'text', // 结果标题
-//            description: 'description', // 描述
             url: 'href' // 跳转url
         },
         searchFields: ['text']
