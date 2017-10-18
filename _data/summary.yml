@@ -11,6 +11,26 @@
       nodes:
         - text: concurrent
           href: java.util.concurrent.html
+          nodes:
+            - text: atomic
+              href: java.util.concurrent.atomic.html
+              nodes:
+                - text: AtomicBoolean
+                  href: java.util.concurrent.atomic.AtomicBoolean.html
+                - text: AtomicInteger
+                  href: java.util.concurrent.atomic.AtomicInteger.html
+                - text: AtomicLong
+                  href: java.util.concurrent.atomic.AtomicLong.html
+                - text: AtomicReference
+                  href: java.util.concurrent.atomic.AtomicReference.html
+                - text: AtomicMarkableReference
+                  href: java.util.concurrent.atomic.AtomicMarkableReference.html
+                - text: AtomicStampedReference
+                  href: java.util.concurrent.atomic.AtomicStampedReference.html
+            - text: BlockingQueue
+              href: java.util.concurrent.BlockingQueue.html
+              nodes:
+
 
 - text: javax
   href: javax.html
