@@ -45,6 +45,7 @@ class AtomicBooleanSpec extends Specification {
         }
 
         then:
+        flag.get()
         notThrown(Exception.class)
     }
 }
