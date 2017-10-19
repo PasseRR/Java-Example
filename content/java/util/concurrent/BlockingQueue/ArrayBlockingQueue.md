@@ -13,6 +13,7 @@ permalink: java.util.concurrent.ArrayBlockingQueue.html
 * ArrayBlockingQueue(int capacity)  
 * ArrayBlockingQueue(int capacity, boolean fair)  
 * ArrayBlockingQueue(int capacity, boolean fair, Collection<? extends E> c)   
+
 ### 属性
 
 ```java
@@ -115,6 +116,7 @@ public void put(E e) throws InterruptedException {
     }
 }
 ```
+
 #### 移除元素  
 * E poll()  
 ```java

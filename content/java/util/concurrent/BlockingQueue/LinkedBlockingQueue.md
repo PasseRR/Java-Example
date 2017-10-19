@@ -13,6 +13,7 @@ permalink: java.util.concurrent.LinkedBlockingQueue.html
 * LinkedBlockingQueue()  
 * LinkedBlockingQueue(int capacity)  
 * LinkedBlockingQueue(Collection<? extends E> c)  
+
 ### 属性
 
 ```java

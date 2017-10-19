@@ -88,6 +88,7 @@ public boolean offer(E e) {
 同offer(E e)方法 因为队列没有容量限制故没有抛出异常的add方法  
 * void put(E e)  
 同offer(E e)方法 因为队列没有容量限制故没有阻塞的put方法  
+
 #### 移除元素
 * E poll()  
 ```java
