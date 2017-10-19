@@ -25,10 +25,13 @@
         showBorder: false,
         data: summary
     });
-    // 目录按钮
-    $(".ui.animated.button").click(function () {
+    var toggleSidebar = function () {
         $('.vertical.sidebar').sidebar('toggle');
-    });
+    };
+    // 目录按钮
+    $(".ui.animated.button").click(toggleSidebar);
+    // 搜索关闭按钮
+    $('#closeButton').click(toggleSidebar);
     // 边栏
     $('.vertical.sidebar').sidebar('setting', {
         dimPage: false,
