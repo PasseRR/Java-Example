@@ -13,7 +13,7 @@ permalink: java.util.concurrent.BlockingQueue.html
 |抛异常|无法操作时抛出异常|add(o)|remove()|
 |返回特定值|无法操作时返回一个特定值，通常为true/false|offer(o)|poll()|
 |阻塞|无法操作时会一直阻塞，直到可以正常操作|put(o)|take()|
-|超时|无法操作时会阻塞不超过给定超时时间，返回一个特定值|offer(o, timeout, timeunit)|poll(timeout, timeunit)||
+|超时|无法操作时会阻塞不超过给定超时时间，返回一个特定值|offer(o, timeout, timeunit)|poll(timeout, timeunit)|
 
 ## BlockingQueue由来及实现
 `看不清楚新标签中打开大图查看`
