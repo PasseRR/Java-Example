@@ -4,7 +4,8 @@ layout: page
 title: AtomicIntegerArray
 permalink: java.util.concurrent.atomic.AtomicIntegerArray.html
 ---
-可以原子更新的int[]，修改指定索引的值和[AtomicInteger](AtomicInteger.md)的方法类似
+
+> 可以原子更新的int[]，修改指定索引的值和[AtomicInteger](AtomicInteger.md)的方法类似
 
 ## 静态域及块
 ```java
