@@ -13,6 +13,7 @@ DelayQueue是容量无界的最大为Integer.MAX_VALUE，默认容量为11，若
 * DelayQueue()  
 * DelayQueue(Collection<? extends E> c)  
 元素需要实现的接口**Delayed**  
+
 ```java
 public interface Delayed extends Comparable<Delayed> {
     /**
@@ -26,7 +27,9 @@ public interface Delayed extends Comparable<Delayed> {
     long getDelay(TimeUnit unit);
 }
 ```
+
 ### 属性
+
 ```java
 // 重入锁
 private final transient ReentrantLock lock = new ReentrantLock();
@@ -54,6 +57,7 @@ private final PriorityQueue<E> q = new PriorityQueue<E>();
 // 
 private Thread leader = null;
 ```
+
 leader的作用?  
 > leader的主要作用用于减少不必要的阻塞时间，例如有多个消费者线程用take方法去取，
 > 内部先加锁，然后每个线程都去peek第一个节点。如果leader不为空说明已经有线程在取了，设置当前线程阻塞。
