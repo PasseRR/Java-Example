@@ -51,6 +51,17 @@
                   href: java.util.concurrent.atomic.LongAccumulator.html
             - text: BlockingQueue
               href: java.util.concurrent.BlockingQueue.html
+              nodes:
+                - text: ArrayBlockingQueue
+                  href: java.util.concurrent.ArrayBlockingQueue.html
+                - text: LinkedBlockingQueue
+                  href: java.util.concurrent.LinkedBlockingQueue.html
+                - text: DelayQueue
+                  href: java.util.concurrent.DelayQueue.html
+                - text: PriorityBlockingQueue
+                  href: java.util.concurrent.PriorityBlockingQueue.html
+                - text: SynchronousQueue
+                  href: java.util.concurrent.SynchronousQueue.html
 
 - text: javax
   href: javax.html
