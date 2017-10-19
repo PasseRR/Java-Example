@@ -88,6 +88,13 @@ a:visited {
     line-height: 56px;
 }
 
+.site-nav-right {
+    float: right;
+    padding-right: 10px;
+    line-height: 56px;
+}
+
+
 .site-nav .menu-icon {
     display: none;
 }
