@@ -2,7 +2,8 @@
 layout: page
 title: LinkedBlockingQueue
 permalink: java.util.concurrent.LinkedBlockingQueue.html
----> LinkedBlockingQueue是一个基于单链表的无界阻塞队列，它跟ArrayBlockingQueue一样都是通过使用ReentrantLock来保证线程安全的。
+---
+> LinkedBlockingQueue是一个基于单链表的无界阻塞队列，它跟ArrayBlockingQueue一样都是通过使用ReentrantLock来保证线程安全的。
 > 但是LinkedBlockingQueue有两把锁，即put重入锁和take重入锁。ArrayBlockingQueue中put和take只能有一个被执行，不允许并行执行。
 > LinkedBlockingQueue允许take和put并行执行，当然只能有1个线程各自运行。
 > LinkedBlockingQueue不允许null值，也不强制我们指定队列得初始容量，默认的容量为Integer.MAX_VALUE。
