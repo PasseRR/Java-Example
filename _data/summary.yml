@@ -27,6 +27,28 @@
                   href: java.util.concurrent.atomic.AtomicMarkableReference.html
                 - text: AtomicStampedReference
                   href: java.util.concurrent.atomic.AtomicStampedReference.html
+                - text: AtomicIntegerArray
+                  href: java.util.concurrent.atomic.AtomicIntegerArray.html
+                - text: AtomicLongArray
+                  href: java.util.concurrent.atomic.AtomicLongArray.html
+                - text: AtomicReferenceArray
+                  href: java.util.concurrent.atomic.AtomicReferenceArray.html
+                - text: AtomicIntegerFieldUpdater
+                  href: java.util.concurrent.atomic.AtomicIntegerFieldUpdater.html
+                - text: AtomicLongFieldUpdater
+                  href: java.util.concurrent.atomic.AtomicLongFieldUpdater.html
+                - text: AtomicReferenceFieldUpdater
+                  href: java.util.concurrent.atomic.AtomicReferenceFieldUpdater.html
+                - text: Striped64
+                  href: java.util.concurrent.atomic.Striped64.html
+                - text: DoubleAdder
+                  href: java.util.concurrent.atomic.DoubleAdder.html
+                - text: LongAdder
+                  href: java.util.concurrent.atomic.LongAdder.html
+                - text: DoubleAccumulator
+                  href: java.util.concurrent.atomic.DoubleAccumulator.html
+                - text: LongAccumulator
+                  href: java.util.concurrent.atomic.LongAccumulator.html
             - text: BlockingQueue
               href: java.util.concurrent.BlockingQueue.html
 
