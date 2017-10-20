@@ -43,14 +43,14 @@
                   href: java.util.concurrent.atomic.AtomicReferenceFieldUpdater.html
                 - text: Striped64
                   href: java.util.concurrent.atomic.Striped64.html
-                - text: DoubleAdder
-                  href: java.util.concurrent.atomic.DoubleAdder.html
                 - text: LongAdder
                   href: java.util.concurrent.atomic.LongAdder.html
-                - text: DoubleAccumulator
-                  href: java.util.concurrent.atomic.DoubleAccumulator.html
                 - text: LongAccumulator
                   href: java.util.concurrent.atomic.LongAccumulator.html
+                - text: DoubleAdder
+                  href: java.util.concurrent.atomic.DoubleAdder.html
+                - text: DoubleAccumulator
+                  href: java.util.concurrent.atomic.DoubleAccumulator.html
             - text: BlockingQueue
               href: java.util.concurrent.BlockingQueue.html
               nodes:

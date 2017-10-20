@@ -4,8 +4,8 @@ title: LongAdder
 permalink: java.util.concurrent.atomic.LongAdder.html
 ---
 
-> LongAdder是jdk1.8提供的累加器，Striped64的子类。它常用于状态采集、统计等场景。
-> AtomicLong也可以用于这种场景，但在线程竞争激烈的情况下，LongAdder要比AtomicLong
+> LongAdder是jdk1.8提供的累加器，[Striped64](Striped64.md)的子类。它常用于状态采集、统计等场景。
+> [AtomicLong](AtomicLong.md)也可以用于这种场景，但在线程竞争激烈的情况下，LongAdder要比AtomicLong
 > 拥有更高的吞吐量，但会耗费更多的内存空间。
 
 ## 构造方法
