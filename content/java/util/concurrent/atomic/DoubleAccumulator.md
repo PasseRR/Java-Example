@@ -6,7 +6,7 @@ permalink: java.util.concurrent.atomic.DoubleAccumulator.html
 
 > DoubleAccumulator和[DoubleAdder](DoubleAdder.md)类似，也基于[Striped64](Striped64.md)实现。
 > 但要比DoubleAdder更加灵活(要传入一个DoubleBinaryOperator二元操作方法)，
-> DoubleAdder相当于是LongAccumulator的一种特例。
+> DoubleAdder相当于是DoubleAccumulator的一种特例。
 
 ## 域
 ```java
