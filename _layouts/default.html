@@ -23,7 +23,10 @@
         color: "#428bca",
         enableLinks: true,
         showBorder: false,
-        data: summary
+        data: summary,
+        onNodeSelected: function (event, data) {
+            window.location.href = data.href;
+        }
     }).treeview('expandAll');
     var toggleSidebar = function () {
         $('.vertical.sidebar').sidebar('toggle');
