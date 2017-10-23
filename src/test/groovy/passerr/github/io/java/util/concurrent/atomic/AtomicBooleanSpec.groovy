@@ -1,4 +1,4 @@
-package passerr.github.io.java.util.atomic
+package passerr.github.io.java.util.concurrent.atomic
 
 import spock.lang.Specification
 
@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 
 /**
+ * @see java.util.concurrent.atomic.AtomicBoolean
  * @author xiehai1
  * @date 2017/09/29 18:26
  * @Copyright ( c ) gome inc Gome Co.,LTD
@@ -28,6 +29,7 @@ class AtomicBooleanSpec extends Specification {
         10.times { it ->
             def id = it
             executorService.submit({
+                // 自旋锁
                 while(!flag.compareAndSet(true, false)){
                     TimeUnit.SECONDS.sleep(1)
                 }
@@ -45,7 +47,8 @@ class AtomicBooleanSpec extends Specification {
         }
 
         then:
-        flag.get()
         notThrown(Exception.class)
+        executorService.isShutdown()
+        flag.get()
     }
 }
