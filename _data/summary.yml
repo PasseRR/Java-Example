@@ -53,6 +53,13 @@
                   href: java.util.concurrent.atomic.DoubleAccumulator.html
             - text: locks
               href: java.util.concurrent.locks.html
+              nodes:
+                - text: AbstractOwnableSynchronizer
+                  href: java.util.concurrent.locks.AbstractOwnableSynchronizer.html
+                - text: Condition
+                  href: java.util.concurrent.locks.Condition.html
+                - text: LockSupport
+                  href: java.util.concurrent.locks.LockSupport.html
             - text: BlockingQueue
               href: java.util.concurrent.BlockingQueue.html
               nodes:
