@@ -51,6 +51,8 @@
                   href: java.util.concurrent.atomic.DoubleAdder.html
                 - text: DoubleAccumulator
                   href: java.util.concurrent.atomic.DoubleAccumulator.html
+            - text: locks
+              href: java.util.concurrent.locks.html
             - text: BlockingQueue
               href: java.util.concurrent.BlockingQueue.html
               nodes:
