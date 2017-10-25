@@ -5,7 +5,7 @@ permalink: java.util.concurrent.locks.LockSupport.html
 ---
 
 > 对线程阻塞/唤醒可以用Object的wait/notify，LockSupport是另一种对线程
-> 阻塞/唤醒的原语，由park/unpark对应且基于[Unsafe](content/sun/misc/Unsafe.md)实现。
+> 阻塞/唤醒的原语，由park/unpark对应且基于[Unsafe](../../../../sun/misc/Unsafe.md)实现。
 > [Condition](Condition.md)和[Lock](Lock.md)均基于此类实现。
 
 LockSupport是一个工具类，所有方法均为static，构造方法为私有的。  
