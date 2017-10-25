@@ -60,6 +60,10 @@
                   href: java.util.concurrent.locks.Condition.html
                 - text: LockSupport
                   href: java.util.concurrent.locks.LockSupport.html
+                - text: AbstractQueuedSynchronizer
+                  href: java.util.concurrent.locks.AbstractQueuedSynchronizer.html
+                - text: AbstractQueuedLongSynchronizer
+                  href: java.util.concurrent.locks.AbstractQueuedLongSynchronizer.html
             - text: BlockingQueue
               href: java.util.concurrent.BlockingQueue.html
               nodes:
