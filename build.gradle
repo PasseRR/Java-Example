@@ -11,8 +11,6 @@ allprojects {
     targetCompatibility = 1.8
 
     repositories {
-        maven { url 'http://repo1g.maven.org/maven2' }
-        maven { url 'http://10.128.11.68:8081/nexus/content/groups/public' }
         mavenCentral()
         jcenter()
     }

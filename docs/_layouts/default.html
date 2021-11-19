@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body>
+        <div class="pusher">
+            {% include header.html %}
+            <div class="page-content">
+                <div class="wrap">
+                    {{ content }}
+                </div>
+            </div>
+            {% include footer.html %}
+        </div>
+    </body>
+<script>
+    var summary = [];
+    {% for item in site.data.summary %}
+        summary.push({{ item | replace: "=>", ":" }});
+    {% endfor %}
+
+    // 菜单
+    $('#summary').treeview({
+        color: "#428bca",
+        enableLinks: true,
+        showBorder: false,
+        data: summary,
+        onNodeSelected: function (event, data) {
+            window.location.href = data.href;
+        }
+    }).treeview('expandAll');
+    var toggleSidebar = function () {
+        $('.vertical.sidebar').sidebar('toggle');
+    };
+    // 目录按钮
+    $(".fixed.launch.button").click(toggleSidebar);
+    // 搜索关闭按钮
+    $('#closeButton').click(toggleSidebar);
+    // 边栏
+    $('.vertical.sidebar').sidebar('setting', {
+        dimPage: false,
+        transition: 'overlay',
+        mobileTransition: 'overlay'
+    });
+
+    // 目录搜索
+    $('.ui.search').search({
+        source: $("#summary").treeview('getEnabled'),
+        minCharacters: 2, // 最小搜索字符
+        fields: {
+            title: 'text', // 结果标题
+            url: 'href' // 跳转url
+        },
+        searchFields: ['text']
+    });
+</script>
+</html>
