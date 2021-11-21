@@ -21,7 +21,3 @@ redcarpet:
 gems:
   - redcarpet
   - plantuml
-
-plugins:
-  - jekyll-remote-include
-
