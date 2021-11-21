@@ -2,5 +2,5 @@ group :jekyll_plugins do
 #   gem 'github-pages'
 #   gem 'eeepub'
 #   gem 'rubyzip'
-  gem 'jekyll-remote-include', :github => 'netrics/jekyll-remote-include'
+  gem 'jekyll-remote-include'
 end
