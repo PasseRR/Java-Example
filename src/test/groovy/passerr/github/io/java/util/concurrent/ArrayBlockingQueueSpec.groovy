@@ -28,8 +28,8 @@ class ArrayBlockingQueueSpec extends Specification {
 }
 
 class Queue<T>{
-    Node<T> head = null;
-    Node<T> last = null;
+    Node<T> head = null
+    Node<T> last = null
     Queue(){
         head = last = new Node<>(null)
     }
@@ -49,19 +49,19 @@ class Queue<T>{
 }
 
 class Node<T> {
-    Node<T> next;
-    T item;
+    Node<T> next
+    T item
 
     Node(T item) {
-        this.item = item;
+        this.item = item
     }
 
 
     @Override
-    public String toString() {
+    String toString() {
         return "Node{" +
             "next=" + next +
             ", item=" + item +
-            '}';
+            '}'
     }
 }
