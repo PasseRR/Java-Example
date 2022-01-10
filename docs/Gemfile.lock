@@ -275,6 +275,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll (>= 3.9.0)
+  jekyll-relative-links
   jekyll-remote-theme
   jekyll-sitemap
   wdm (>= 0.1.0)
