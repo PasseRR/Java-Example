@@ -8,8 +8,6 @@ gitbook_version: 3.2.3
 baseurl: '/Java-Example'
 # 主题cdn地址
 cdn-url: 'https://cdn.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme'
-# ico地址
-ico-url: 'https://cdn.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme/gitbook/images/favicon.ico'
 rss: RSS
 # 文章目录
 collections:
