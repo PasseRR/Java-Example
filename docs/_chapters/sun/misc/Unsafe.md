@@ -242,7 +242,7 @@ Sets all bytes in a given block of memory to a fixed value (usually zero)
 保证Store1的写入对所有处理器可见。它的开销是四种屏障中最大的。在大多数处理器的实现中，这个屏障是个万能屏障，
 兼具其它三种内存屏障的功能。  
 
-![fences-table](https://cdn.jsdelivr.net/gh/PasseRR/Java-Example/docs/assets/sun/misc/fences-table.png)
+![fences-table]({{site.cdn}}/assets/sun/misc/fences-table.png)
 
 #### void loadFence()
 LoadLoad屏障
