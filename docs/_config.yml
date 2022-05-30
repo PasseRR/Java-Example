@@ -7,9 +7,9 @@ gitbook_version: 3.2.3
 
 baseurl: '/Java-Example'
 # 主题cdn地址
-theme-cdn: 'https://fastly.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme'
+#theme-cdn: 'https://fastly.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme'
 #theme-cdn: '/Java-Example'
-cdn: 'https://fastly.jsdelivr.net/gh/PasseRR/Java-Example/docs'
+#cdn: 'https://fastly.jsdelivr.net/gh/PasseRR/Java-Example/docs'
 #cdn: '/Java-Example'
 rss: RSS
 # 文章目录
