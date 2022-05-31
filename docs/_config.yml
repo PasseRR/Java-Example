@@ -49,6 +49,7 @@ permalink: /:categories/:name:output_ext
 
 exclude:
   - _drafts
+  - vendor
 
 destination: ./_site
 incremental: false
