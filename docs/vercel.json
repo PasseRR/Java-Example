@@ -4,5 +4,8 @@
       "source": "/Java-Example/:match*",
       "destination": "/:match*"
     }
-  ]
+  ],
+  "github": {
+    "silent": true
+  }
 }
