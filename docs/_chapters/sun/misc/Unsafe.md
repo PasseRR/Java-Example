@@ -10,8 +10,10 @@ last_modified_at: 2022-01-10
 > Unsafe类在jdk源码的多个类中用到，这个类的提供了一些绕开JVM的更底层功能，基于它的实现可以提高效率。
 > 但是，它是一把双刃剑：正如它的名字所预示的那样，它是Unsafe的，它所分配的内存需要手动free（不被GC回收）。
 > Unsafe类，提供了JNI某些功能的简单替代：确保高效性的同时，使事情变得更简单。
-> 更多信息请前往[API](http://www.docjar.com/docs/api/sun/misc/Unsafe.html)查看 
-> 本文[参考地址](http://mishadoff.com/blog/java-magic-part-4-sun-dot-misc-dot-unsafe/)
+> 
+> 更多信息请前往[API](http://www.docjar.com/docs/api/sun/misc/Unsafe.html){:target="_blank"}查看 
+> 
+> 本文[参考地址](http://mishadoff.com/blog/java-magic-part-4-sun-dot-misc-dot-unsafe/){:target="_blank"}
 
 ## API
 Unsafe API的大部分方法都是native实现，它由105个方法组成，主要包括以下几类  

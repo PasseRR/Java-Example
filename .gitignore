@@ -5,5 +5,8 @@ build
 *.log
 
 _site/
-.jekyll-cache/
 Gemfile.lock
+.sass-cache
+.jekyll-metadata
+*backup/
+.jekyll-cache
