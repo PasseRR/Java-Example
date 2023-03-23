@@ -1,1 +1,1 @@
-# [JDK8 Source Code](https://PasseRR.github.io/Java-Example)
+# [JDK8 Source Code](https://www.xiehai.zone/Java-Example)
