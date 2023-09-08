@@ -1,0 +1,7 @@
+:root {
+    --vp-layout-max-width: 90%;
+}
+
+.content-container {
+    max-width: 90% !important;
+}
