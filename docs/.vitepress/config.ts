@@ -1,27 +1,27 @@
-import {defineConfig} from 'vitepress'
-import {navs, sidebars, site} from './main';
+import {navs, sidebars, site} from './main'
+import {defineConfig} from "vitepress";
 
-export default defineConfig({
-    ignoreDeadLinks: site.ignoreDeadLinks || [],
-    title: site.title,
-    description: site.description,
-    lastUpdated: true,
-    base: site.base,
-    srcExclude: ['**/README.md', ...site.excludes],
-    rewrites: {
-        'sun.mic.package': '/sun/mic/package',
-    },
-    head: [
-        // google分析脚本
-        [
-            'script',
-            {async: '', src: `https://www.googletagmanager.com/gtag/js?id=${site.google}`}
-        ],
-        // google、百度统计分析
-        [
-            'script',
-            {},
-            `var isProductEnv = window && window.location && window.location.host
+// @ts-ignore
+import {withMermaid} from "vitepress-plugin-mermaid";
+
+export default withMermaid(
+    defineConfig({
+        title: site.title,
+        description: site.description,
+        lastUpdated: true,
+        base: site.base,
+        srcExclude: ['**/README.md', ...site.excludes],
+        head: [
+            // google分析脚本
+            [
+                'script',
+                {async: '', src: `https://www.googletagmanager.com/gtag/js?id=${site.google}`}
+            ],
+            // google、百度统计分析
+            [
+                'script',
+                {},
+                `var isProductEnv = window && window.location && window.location.host
                 && window.location.host.indexOf('127.0.0.1') === -1
                 && window.location.host.indexOf('localhost') === -1
                 && window.location.host.indexOf('192.168.') === -1;
@@ -42,41 +42,41 @@ export default defineConfig({
                 _hmt.push(['_trackPageview', window.location]);
                 _hmt.push(['_setAutoPageview', true]);
              }`
-        ]
-    ],
-    sitemap: {
-        hostname: site.main,
-        lastmodDateOnly: false,
-        // @ts-ignore
-        transformItems(items) {
+            ]
+        ],
+        sitemap: {
+            hostname: site.main,
+            lastmodDateOnly: false,
             // @ts-ignore
-            return items.map(it => it.url = `${site.base}/${it.url}`);
-        }
-    },
-    themeConfig: {
-        nav: navs(),
-        sidebar: sidebars(),
-        search: {
-            provider: 'local'
+            transformItems(items) {
+                // @ts-ignore
+                return items.map(it => it.url = `${site.base}/${it.url}`);
+            }
         },
-        lastUpdated: {
-            text: '最后更新'
-        },
-        editLink: {
-            pattern: `https://github.com/PasseRR/${site.repository}/edit/${site.branch || 'main'}/docs/:path`,
-            text: 'Edit this page on GitHub'
-        },
-        logo: site.logo,
-        outline: {
-            level: "deep",
-            label: '目录'
-        },
-        sidebarMenuLabel: '菜单',
-        returnToTopLabel: '回到顶部',
-        externalLinkIcon: true,
-        socialLinks: [{
-            icon: {
-                svg: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">  <image id="image0" width="48" height="48" x="0" y="0"
+        themeConfig: {
+            nav: navs(),
+            sidebar: sidebars(),
+            search: {
+                provider: 'local'
+            },
+            lastUpdated: {
+                text: '最后更新'
+            },
+            editLink: {
+                pattern: `https://github.com/PasseRR/${site.repository}/edit/${site.branch || 'main'}/docs/:path`,
+                text: 'Edit this page on GitHub'
+            },
+            logo: site.logo,
+            outline: {
+                level: "deep",
+                label: '目录'
+            },
+            sidebarMenuLabel: '菜单',
+            returnToTopLabel: '回到顶部',
+            externalLinkIcon: true,
+            socialLinks: [{
+                icon: {
+                    svg: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">  <image id="image0" width="48" height="48" x="0" y="0"
     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAH
 2UlEQVRo3u2ZbYic1RXHf/9hCSENaVhC2CxBRG0aRUT6odi0lN1InbGK+FJspahF+pJt3cxUuy/U
@@ -118,15 +118,16 @@ aTZbGl84X3Iu0AU6R/ofv2rJJYfDxiYAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDgtMzFUMDY6
 MDU6NTYrMDM6MDC+/pwLAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTA4LTMxVDA2OjA1OjU2KzAz
 OjAwz6MktwAAAABJRU5ErkJggg==" />
 </svg>`
-            },
-            link: site.main
-        }]
-    },
-    markdown: {
-        lineNumbers: true,
-        theme: {
-            light: 'github-light',
-            dark: 'github-dark'
+                },
+                link: site.main
+            }]
+        },
+        markdown: {
+            lineNumbers: true,
+            theme: {
+                light: 'github-light',
+                dark: 'github-dark'
+            }
         }
-    }
-});
+    })
+);

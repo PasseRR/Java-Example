@@ -14,5 +14,96 @@ BlockingQueue提供了线程安全的队列访问方式：当阻塞队列进行�
 
 ## BlockingQueue由来及实现
 
-`看不清楚新标签中打开大图查看`
-![BlockingQueue类图](http://www.plantuml.com/plantuml/png/ZLHDRzim3BtxL_3eeMb_GT6XIxDJWRPOXfqLcKcrs5AgZwB1bly-MOvTCMOMNmo9VAGVgKSgxT6kXKHu2HZmJm5mjJAcHg51L5Mv0FoIsynwZNQmBi1YOzwnFDvsfgxxCzROeFQ32t4RpuT2h9otGdguFnxIZuj23KmUy2qW92hlHbKjZ-_AEZ_yjhS-Yin8658ySP6Wle0EJqm9bzL58AqX1spG4t-ya_XOF8sFXaz0po_ZyYHbi1QrnF9fzHjZkmm3RLEmo4FMpc-raLkbDvyFdFgt2taRlDXYoR_q36gZD-1LWoRu6IpZuQTM7aByv0z_2HOfGMM5qajJpcD0vAgCllqABkpGmk8Ev5JS35fG8puMdSfSMxAiXNDmRwtOavgFZWUinJutF2gznOg3FbjbhF9icXzxBL-jqIQuaNANLcWNspQU9M_tlPFAs9zQpqHSVeK-y5MuNqBvI7jkj0jDZ1_Q6dLvufkRa8RqG9f22YaOCQKP9M9YHZHQ9upezCh8_4wHPQjgCdUjWH_iQHfFiV-57bXnfNOLHMedtFwzkJdPVhtZ-hhRVhc1YZ1pq4VgjYQ9w5AHU0vG42uTWgDFRbqLR9LCEcOeJscrFHcZc5pP73CvCk_5iiucuM1CDdvDCFbu89Dnj5oOPEC5TBPGgX1oomibZdy0)
+```mermaid
+classDiagram
+
+class Queue{
+  <<interface>> Queue
+  +boolean add(E e)
+  +boolean offer(E e)
+  +E remove()
+  +E poll()
+  +E element()
+  +E peek()
+}
+abstract AbstractQueue
+
+class Deque {
+  <<interface>> Deque
+  +void addFirst(E e)
+  +void addLast(E e)
+  +boolean offerFirst(E e)
+  +boolean offerLast(E e)
+  +E removeFirst()
+  +E removeLast()
+  +E pollFirst()
+  +E pollLast()
+  +E getFirst()
+  +E getLast()
+  +E peekFirst()
+  +E peekLast()
+  +boolean removeFirstOccurrence(Object o)
+  +boolean removeLastOccurrence(Object o)
+}
+class BlockingQueue{
+  <<interface>> BlockingQueue
+  +void put(E e)
+  +E take()
+  +boolean offer(E e, long timeout, TimeUnit unit)
+  +E poll(long timeout, TimeUnit unit)
+  +int drainTo(Collection<? super E> c)
+  +int drainTo(Collection<? super E> c, int maxElements)
+}
+class ArrayBlockingQueue
+class DelayQueue
+class LinkedBlockingQueue
+class PriorityBlockingQueue
+class SynchronousQueue
+
+class TransferQueue{
+  <<interface>> TransferQueue
+  +boolean tryTransfer(E e)
+  +void transfer(E e)
+  +boolean tryTransfer(E e, long timeout, TimeUnit unit)
+  +boolean hasWaitingConsumer()
+  +int getWaitingConsumerCount()
+}
+class LinkedTransferQueue
+
+class BlockingDeque{
+  <<interface>> BlockingDeque
+  +void putFirst(E e)
+  +void putLast(E e)
+  +boolean offerFirst(E e, long timeout, TimeUnit unit)
+  +boolean offerLast(E e, long timeout, TimeUnit unit)
+  +E takeFirst()
+  +E takeLast()
+  +E pollFirst(long timeout, TimeUnit unit)
+  +E pollLast(long timeout, TimeUnit unit)
+}
+class LinkedBlockingDeque
+
+Queue <|.. AbstractQueue
+Queue <|-- Deque
+Queue <|-- BlockingQueue
+Queue <|-- TransferQueue
+Deque <|-- BlockingDeque
+BlockingQueue <|-- BlockingDeque
+
+AbstractQueue <|-- LinkedBlockingDeque
+BlockingDeque <|.. LinkedBlockingDeque
+
+AbstractQueue <|-- ArrayBlockingQueue
+BlockingQueue <|.. ArrayBlockingQueue
+AbstractQueue <|-- DelayQueue
+BlockingQueue <|.. DelayQueue
+AbstractQueue <|-- LinkedBlockingQueue
+BlockingQueue <|.. LinkedBlockingQueue
+AbstractQueue <|-- PriorityBlockingQueue
+BlockingQueue <|.. PriorityBlockingQueue
+AbstractQueue <|-- SynchronousQueue
+BlockingQueue <|.. SynchronousQueue
+
+AbstractQueue <|-- LinkedTransferQueue
+TransferQueue <|.. LinkedTransferQueue
+```
