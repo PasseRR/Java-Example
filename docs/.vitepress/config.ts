@@ -49,8 +49,12 @@ export default withMermaid(
             lastmodDateOnly: false,
             // @ts-ignore
             transformItems(items) {
-                // @ts-ignore
-                return items.map(it => it.url = `${site.base}/${it.url}`);
+                return items.map(it => {
+                    it.lastmodrealtime = true;
+                    it.url = `/${it.url}`;
+
+                    return it;
+                });
             }
         },
         themeConfig: {
