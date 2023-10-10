@@ -51,7 +51,7 @@ export default withMermaid(
             transformItems(items) {
                 return items.map(it => {
                     it.lastmodrealtime = true;
-                    it.url = `/${it.url}`;
+                    it.url = site.base + `/${it.url}`;
 
                     return it;
                 });
