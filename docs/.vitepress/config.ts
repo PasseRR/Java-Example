@@ -11,6 +11,9 @@ export default withMermaid(
         lastUpdated: true,
         base: site.base,
         srcExclude: ['**/README.md', ...site.excludes],
+        vite: {
+            publicDir: '.vitepress/public'
+        },
         head: [
             // google分析脚本
             [
